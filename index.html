@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Not Asistanı</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <div class="app-container">
+        <header>
+            <h1>🧠 AI Akıllı Not Asistanı</h1>
+            <p>Ders notlarınızı yapıştırın, yapay zeka anında özetlesin ve test soruları çıkarsın!</p>
+        </header>
+
+        <main>
+            <section class="card form-section">
+                <h2>Yeni Not Analiz Et</h2>
+                <div class="form-group">
+                    <label for="noteTitle">Ders / Konu Başlığı</label>
+                    <input type="text" id="noteTitle" placeholder="Örn: C# Programlama Giriş">
+                </div>
+                <div class="form-group">
+                    <label for="noteContent">Ders Notlarınız / Metin</label>
+                    <textarea id="noteContent" rows="6" placeholder="Buraya ders notlarınızı veya özetlenmesini istediğiniz metni yapıştırın..."></textarea>
+                </div>
+                <button id="btnSubmit" class="btn-primary">Yapay Zeka ile Analiz Et ✨</button>
+            </section>
+
+            <div id="loading" class="loading-spinner hidden">Yapay zeka notlarınızı okuyor ve sorular hazırlıyor... ⏳</div>
+
+            <section id="resultSection" class="card result-section hidden">
+                <div class="result-box">
+                    <h3>📝 Yapay Zeka Özeti</h3>
+                    <div id="summaryOutput" class="output-text"></div>
+                </div>
+                <div class="result-box">
+                    <h3>❓ Çıkarılan Test Soruları</h3>
+                    <div id="quizOutput" class="output-text"></div>
+                </div>
+            </section>
+
+            <section class="card history-section">
+                <h2>📚 Geçmiş Notlarım (Veritabanı)</h2>
+                <div id="notesList" class="notes-list">
+                    <p class="empty-text">Henüz kaydedilmiş bir not bulunmuyor.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
